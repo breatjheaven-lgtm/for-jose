@@ -7,6 +7,22 @@
 
 /* iPhone layout fallback */
 @media(max-width:650px){body:before{content:'If you can read this, mobile CSS is loading';position:fixed;top:12px;left:12px;right:12px;z-index:9999;background:#fff;color:#633b4a;padding:12px;border-radius:12px;font-size:14px}}
+
+/* FORCE iPhone lock screen layout */
+@media screen and (max-width: 650px) {
+  html, body { width: 100% !important; height: 100% !important; min-height: 100% !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; }
+  body { display: block !important; background: #f3d7e0 !important; }
+  .scene { display: block !important; position: fixed !important; inset: 0 !important; width: 100% !important; height: 100vh !important; height: 100svh !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  .phone { display: block !important; position: absolute !important; inset: 0 !important; width: 100% !important; height: 100vh !important; height: 100svh !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: #f8e6ec !important; }
+  .screen { display: block !important; position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; background: linear-gradient(155deg,#f9e9ee,#edc7d4 54%,#dfa9bd) !important; }
+  .wallpaper { display: block !important; position: absolute !important; inset: 0 !important; opacity: 1 !important; visibility: visible !important; }
+  .status, .island, .lock, .home-indicator { visibility: visible !important; }
+  .status { display: flex !important; z-index: 25 !important; }
+  .island { display: block !important; z-index: 30 !important; }
+  .lock { display: flex !important; position: absolute !important; inset: 0 !important; z-index: 10 !important; opacity: 1 !important; visibility: visible !important; color: #fffaff !important; }
+  .lock.hide { display: none !important; }
+}
+
 </style></head>
 <body><main class="scene"><aside class="intro"><h1>a little world<br>for jose ♡</h1><p>A tiny virtual phone filled with little reminders that you're loved. Made with love, just for you.</p><p style="font-size:11px;opacity:.85">♡ tap around, there's more to find</p></aside><section class="phone" aria-label="Virtual iPhone"><div class="screen"><div class="wallpaper"></div><div class="status"><span id="statusTime">9:41</span><span>●●●  Wi-Fi  ▰</span></div><div class="island"></div>
 <div class="lock" id="lock"><div class="date" id="lockDate">Tuesday, October 20</div><div class="clock" id="clock">9:41</div><div style="font-size:12px;letter-spacing:1px">a little world for jose ♡</div><div class="lock-note"><strong>♡ a note for you</strong>Someone made this tiny world just to remind you how loved you are.</div><div class="lock-bottom"><button class="round" aria-label="Flashlight" onclick="toast('No flashlight here, just love ♡')">◉</button><div class="swipe" id="swipeHint">SWIPE UP TO OPEN ↑</div><button class="round" aria-label="Camera" onclick="toast('Smile, you're loved ♡')">◎</button></div></div>
